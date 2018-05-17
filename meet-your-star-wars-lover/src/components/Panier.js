@@ -34,7 +34,7 @@ class Panier extends Component {
   }
   render() {
     return <Container>
-      {this.state.loading && <div>  <h1>MESSAGE SUBLIMINAL</h1><img src={stormtrooper}></img></div>}
+      {this.state.loading && <img src={stormtrooper} alt='gentil stormtrooper'></img>}
       <Listepersonnes 
         liste={this.state.liste}
         chooseProfile = {this.chooseProfile}  

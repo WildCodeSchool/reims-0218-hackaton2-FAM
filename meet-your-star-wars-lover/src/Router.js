@@ -1,6 +1,7 @@
 import React from 'react';
 import './Router.css';
 import stormtrooper from './img/stormtrooper.gif'
+
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Panier from './components/Panier';
