@@ -1,6 +1,8 @@
 import React from 'react';
-import './Router.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Button } from "reactstrap"
+import './bootstrap.css';
+import './Router.css';
 
 const Systemrouter = () => (
   <Router>
@@ -21,7 +23,11 @@ const Systemrouter = () => (
       </ul>
 
       <hr />
-
+      <Button color="primary">Primaire</Button>
+      <Button color="success">Succès</Button>
+      <Button color="info">Information</Button>
+      <Button color="warning">Attention</Button>
+      <Button color="danger">Erreur</Button>
       <Route exact path="/" component={Home} />
       <Route path="/love" component={Love} />
       <Route path="/about" component={About} />
