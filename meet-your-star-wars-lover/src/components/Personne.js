@@ -5,16 +5,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import { Row, Col, Button } from 'reactstrap'
 
-
-const liste = ()=> {
-  fetch('https://cdn.rawgit.com/akabab/starwars-api/0.2.1/api/all.json')
-    .then(res => res.json())
-    .then(personnes => personnes)
-}
-
-const personneDeLaListe = (arr, id) => arr.filter(personne => personne.id === id)
-
-const Personne = ({id, image, name, chooseProfile, match}) => (
+const Personne = ({id, image, name, homeworld, height, mass, chooseProfile, match}) => (
   <Router>
     <div className="Row">
       <Row>
@@ -29,14 +20,18 @@ const Personne = ({id, image, name, chooseProfile, match}) => (
           <Button onClick={ chooseProfile }>Date</Button>
         </Col>
       </Row>
-    <Route path='/profil/:id' component={ Profile } />
+    <Route path='/profil/:id' render={()=><Profile id={id} name={ name } homeworld={homeworld} mass={mass} height={height}></Profile>}/>
     </div>
   </Router>
 )
 
-const Profile = function(personneDeLaListe(liste, id)) {
+const Profile = ({ id, name, homeworld, height, mass, }) => (
+  <div>
+<h1>coucou je m'appelle { name }</h1>
+<p>je viens de { homeworld }, je mesure { height }m pèse { mass } kg</p>
+  </div>
 
-}
+)
 
 
 export default Personne
