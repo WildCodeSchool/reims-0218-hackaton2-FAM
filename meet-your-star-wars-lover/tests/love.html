@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <form>
+        <input required type="text" id="inputLoverOne">
+        <input required type="text" id="inputLoverTwo">
+        <button type="button" onclick="calculateLoveRate()">Interroger le Love Calculator</button>
+    </form>
+    <div id="love">
+        <div id="lover1"></div>
+        <div id="result"></div>
+        <div id="lover2"></div>
+    </div>
+
+    <script>
+        const resultField = document.getElementById("result")
+        const calculateLoveRate = () => {
+            let nameLoverOne = document.getElementById("inputLoverOne").value
+            let nameLoverTwo = document.getElementById("inputLoverTwo").value
+            let loveRate = 0
+
+            loveRate = Math.round(Math.random() * 100) + 1
+
+            resultField.innerHTML = `${nameLoverOne}, votre taux d'amour avec ${nameLoverTwo} s'élève à ${loveRate} %.`
+            interpreteResult(loveRate)
+        }
+
+        const interpreteResult = (result) => {
+            // 1%
+            if (result === 1) {
+                resultField.innerHTML += "<p>Vous savez ce que vous avez à faire, non ?</p>"
+            } else {
+                // 2-24%
+                if (result <= 24) {
+                    resultField.innerHTML += "<p>Ouch... Il n'y a aucune attractivité réciproque...</p>"
+                } else {
+                    // 25-49%
+                    if (result <= 49) {
+                        resultField.innerHTML += "<p>Peut-être en bons copains, mais c'est tout.</p>"
+                    } else {
+                        // 50-69%
+                        if (result <= 69) {
+                            resultField.innerHTML += "<p>Une bonne amitié, mais l'un des deux n'ose pas aller plus loin.</p>"
+                        } else {
+                            // 70-84%
+                            if (result <= 84) {
+                                resultField.innerHTML += "<p>Peut-être le début d'une histoire d'amour (finit mal en général... ♫)</p>"
+                            } else {
+                                // 85-99%
+                                if (result <= 99) {
+                                    resultField.innerHTML += "<p>Les liens sont très solides. Oui, il/elle vous aime de tout son cœur !</p>"
+                                } else {
+                                    // 100%
+                                    resultField.innerHTML += "<p>Organisez le mariage !</p>"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+
+
+
+
+        }
+    </script>
+  </body>
+</html>
