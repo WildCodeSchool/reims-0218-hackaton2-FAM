@@ -9,7 +9,7 @@ class Profil extends Component {
     super()
 
     this.state = {
-      url: `https://cdn.rawgit.com/akabab/starwars-api/0.2.1/api/id/4.json`,
+      url: `https://cdn.rawgit.com/akabab/starwars-api/0.2.1/api/id/1.json`,
       loading: true,
       data: [] 
     }
@@ -30,8 +30,8 @@ class Profil extends Component {
 
   render() {
     return <Container>
-      <Card>
-          <CardImg top width="100%" src={this.state.data.image} alt="Card image cap" />
+      <Card className="w-25">
+          <CardImg className="img-fluid" src={this.state.data.image} alt="Card image cap" />
           <CardBody>
             <CardTitle>{this.state.data.name}</CardTitle>
             <CardSubtitle>Lover des étoiles</CardSubtitle>
