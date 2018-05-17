@@ -1,0 +1,85 @@
+.btn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+/* Primary */
+.btn-primary {
+    background: rgb(142, 70, 106);
+    color: #ffffff;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: rgb(112, 30, 66);
+}
+
+.btn-primary:active, .btn-primary.active {
+    background: rgb(142, 70, 106);
+    box-shadow: none;
+}
+/* Success */
+.btn-success {
+    background: rgb(255, 53, 123);
+    color: #ffffff;
+}
+
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open > .dropdown-toggle.btn-success {
+    background: rgb(153, 31, 64);
+}
+
+.btn-success:active, .btn-success.active {
+    background: rgb(255, 53, 123);
+    box-shadow: none;
+}
+/* Info */
+.btn-info {
+    background: rgb(93, 47, 70);
+    color: #ffffff;
+}
+
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open > .dropdown-toggle.btn-info {
+    background: rgb(54, 29, 42);
+}
+
+.btn-info:active, .btn-info.active {
+    background: rgb(93, 47, 70);
+    box-shadow: none;
+}
+/* Warning */
+.btn-warning {
+    background: rgb(200, 127, 23);
+    color: #ffffff;
+}
+
+.btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active, .open > .dropdown-toggle.btn-warning {
+    background: rgb(120, 71, 14);
+}
+
+.btn-warning:active, .btn-warning.active {
+    background: rgb(200, 127, 23);
+    box-shadow: none;
+}
+/* Warning */
+.btn-danger {
+    background: rgb(226, 37, 31);
+    color: #ffffff;
+}
+
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open > .dropdown-toggle.btn-danger {
+    background: rgb(135, 22, 18);
+}
+
+.btn-danger:active, .btn-danger.active {
+    background: rgb(226, 37, 31);
+    box-shadow: none;
+}
+
+body {
+    background-color: black;
+}

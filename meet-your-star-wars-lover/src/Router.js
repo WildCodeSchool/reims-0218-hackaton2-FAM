@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import './Router.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Listepersonnes from "./Listepersonnes";
 
@@ -44,7 +45,7 @@ const arr = [{
   "formerAffiliations": []
 }]
 
-const BasicExample = () => (
+const Systemrouter = () => (
   <Router>
     <div>
       <ul>
@@ -123,4 +124,4 @@ const Topic = ({ match }) => (
   </div>
 );
 
-export default BasicExample;
+export default Systemrouter;
