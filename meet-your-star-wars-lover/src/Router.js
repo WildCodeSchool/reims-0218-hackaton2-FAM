@@ -1,35 +1,9 @@
 import React from 'react';
 import './Router.css';
+import stormtrooper from './img/stormtrooper.gif'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Listepersonnes from "./components/Listepersonnes";
-import Personne from './components/Personne';
+
 import Panier from './components/Panier';
-
-// const api = 'https://cdn.rawgit.com/akabab/starwars-api/0.2.1/api/all.json'
-// const personnes = []
-
-// fetch(api)
-//   .then(res => res.json())
-//   .then(data => console.log(data))
-
-const luke ={
-  id: 1,
-  name: "Luke Skywalker",
-  image: "https://vignette.wikia.nocookie.net/starwars/images/2/20/LukeTLJ.jpg"
-}
-
-const liste = [
-  {
-    id: 2,
-    name: "fantôme de Luke Skywalker",
-    image: "https://vignette.wikia.nocookie.net/starwars/images/2/20/LukeTLJ.jpg"
-  },
-  {
-    id: 3,
-    name: "Luke Skywalker dans tes rêves",
-    image: "https://vignette.wikia.nocookie.net/starwars/images/2/20/LukeTLJ.jpg"
-  }
-]
 
 const Systemrouter = () => (
   <Router>
@@ -61,17 +35,16 @@ const Systemrouter = () => (
 );
 
 const Home = () => ( 
-    <Panier article={liste}/>
+  <div>
+    <Panier />
+    </div>
 );
 
 const Love = () => (
   <div>
     <h2>Rencontre l'amour intergalactique</h2>
     <p>avec l'api starwars</p>
-    <Personne {...luke}>
-    </Personne>
-    <Listepersonnes liste={liste}/>
-    
+    <img src={stormtrooper} alt="gentil stormtrooper"/>
   </div>
 );
 

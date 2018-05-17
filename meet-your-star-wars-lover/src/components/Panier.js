@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import { Button, Container } from 'reactstrap'
+import stormtrooper from '../img/stormtrooper.gif'
 
 import Listepersonnes from './Listepersonnes'
 
@@ -14,6 +15,11 @@ class Panier extends Component {
       loading: true,
       liste: []
     }
+    this.chooseProfile = this.chooseProfile.bind(this)
+  }
+
+  chooseProfile (personId) {
+    console.log(`on clique sur ${personId}`)
   }
 
   componentDidMount(){
@@ -28,9 +34,12 @@ class Panier extends Component {
   }
   render() {
     return <Container>
+      {this.state.loading && <div>  <h1>MESSAGE SUBLIMINAL</h1><img src={stormtrooper}></img></div>}
       <Listepersonnes 
-        liste={this.state.liste} />
-      <Button>Coucou je suis un bouton mais je sais pas à quoi je sers</Button>
+        liste={this.state.liste}
+        chooseProfile = {this.chooseProfile}  
+      />
+      <Button>Coucou je suis un bouton mais je sais pas encore à quoi je sers</Button>
       </Container>
   }
 }
