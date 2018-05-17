@@ -1,11 +1,10 @@
 import React from 'react'
 import Personne from './Personne'
 
-const Listepersonnes = ({personnes, remove}) => <div>
-  {personnes.map((personne)=> <Personne
+const Listepersonnes = ({liste}) => <div>
+  {liste.map((personne)=> <Personne
       key={personne.id}
       {...personne}
-      remove={() => remove(personne.id)}
       /> )}
   </div>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Router.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-//import Listepersonnes from "./Listepersonnes";
+import Listepersonnes from "./components/Listepersonnes";
 import Personne from './components/Personne';
 
 const luke ={
@@ -10,6 +10,18 @@ const luke ={
   image: "https://vignette.wikia.nocookie.net/starwars/images/2/20/LukeTLJ.jpg"
 }
 
+const liste = [
+  {
+    id: 2,
+    name: "fantôme de Luke Skywalker",
+    image: "https://vignette.wikia.nocookie.net/starwars/images/2/20/LukeTLJ.jpg"
+  },
+  {
+    id: 3,
+    name: "Luke Skywalker dans tes rêves",
+    image: "https://vignette.wikia.nocookie.net/starwars/images/2/20/LukeTLJ.jpg"
+  }
+]
 
 const Systemrouter = () => (
   <Router>
@@ -52,6 +64,8 @@ const Love = () => (
     <p>avec l'api starwars</p>
     <Personne {...luke}>
     </Personne>
+    <Listepersonnes liste={liste}/>
+    
   </div>
 );
 
