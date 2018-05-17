@@ -9,6 +9,9 @@ const BasicExample = () => (
           <Link to="/">Home</Link>
         </li>
         <li>
+          <Link to="/love">L'amour intergalactique</Link>
+        </li>
+        <li>
           <Link to="/about">About</Link>
         </li>
         <li>
@@ -19,8 +22,10 @@ const BasicExample = () => (
       <hr />
 
       <Route exact path="/" component={Home} />
+      <Route path="/love" component={Love} />
       <Route path="/about" component={About} />
       <Route path="/topics" component={Topics} />
+
     </div>
   </Router>
 );
@@ -28,6 +33,13 @@ const BasicExample = () => (
 const Home = () => (
   <div>
     <h2>Home</h2>
+  </div>
+);
+
+const Love = () => (
+  <div>
+    <h2>Rencontre l'amour intergalactique</h2>
+    <p>avec l'api starwars</p>
   </div>
 );
 
