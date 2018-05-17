@@ -31,7 +31,7 @@ const Systemrouter = () => (
       <Route path="/love" component={Love} />
       <Route path="/about" component={About} />
       <Route path="/topics" component={Topics} />
-      <Route path="/profil" component={Profile} />
+    { /* <Route path="/profil" component={Profile} /> */ }
     </div>
   </Router>
 );
@@ -41,13 +41,6 @@ const Home = () => (
     <Panier />
     </div>
 );
-
-const Profile = ({ id, name, homeworld, height, mass, }) => (
-  <div>
-    <h1>coucou je m'appelle { name }</h1>
-    <p>je viens de { homeworld }, je mesure { height }m pèse { mass } kg</p>
-  </div>
-)
 
 const Love = () => (
   <div>
