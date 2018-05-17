@@ -3,6 +3,7 @@ import './Router.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Listepersonnes from "./components/Listepersonnes";
 import Personne from './components/Personne';
+import Panier from './components/Panier';
 
 // const api = 'https://cdn.rawgit.com/akabab/starwars-api/0.2.1/api/all.json'
 // const personnes = []
@@ -60,7 +61,7 @@ const Systemrouter = () => (
 );
 
 const Home = () => ( 
-    <Listepersonnes liste={liste} />
+    <Panier article={liste}/>
 );
 
 const Love = () => (
