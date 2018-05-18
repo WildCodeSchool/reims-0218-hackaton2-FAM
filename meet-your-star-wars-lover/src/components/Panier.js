@@ -4,9 +4,9 @@ import { Container, Form, FormGroup, Input } from 'reactstrap'
 import './Panier.css';
 
 import Listepersonnes from './Listepersonnes'
+import stormtrooper from '../img/stormtrooper.gif'
 
 const findPersonne = (str, arr) => {
-  console.log(arr)
   return arr.filter(personne => {
     const regex = new RegExp(str, 'gi')
     return personne.name.match(regex)
@@ -34,19 +34,8 @@ class Panier extends Component {
       liste : findPersonne(this.state.input, this.state.initialList)
     })
   }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
-  chooseProfile (personId) {
-    console.log(`on clique sur ${personId} et voici notre url: https://cdn.rawgit.com/akabab/starwars-api/0.2.1/api/id/${personId}.json`)
-    const getProfile = `https://cdn.rawgit.com/akabab/starwars-api/0.2.1/api/id/${personId}.json`
-      this.setState(prevState => ({
-        profileUrl: getProfile
-      }))
-      fetch(getprofile)
-        .then(res => res.json())
-  }
 
   componentDidMount(){
-    console.log(this.state.profileUrl)
     fetch(this.state.url)
       .then(res => res.json())
       .then(charactersRes => 
@@ -58,13 +47,16 @@ class Panier extends Component {
   }
   render() {
     return <Container>
-  <Form>
-    <FormGroup>
-      <Input type="text" placeholder="Poké recherche" onChange={this.handleInput.bind(this)} />
-    </FormGroup>
-  </Form>
-  <Listepersonnes liste={this.state.liste} />
-  </Container>
+      {this.state.loading && <img src={stormtrooper} alt='gentil stormtrooper'></img>}
+      <Form>
+        <FormGroup>
+          <Input type="text" placeholder="Poké recherche" onChange={this.handleInput.bind(this)} />
+        </FormGroup>
+      </Form>
+      <Listepersonnes 
+        liste={this.state.liste}
+      />
+      </Container>
   }
 }
 

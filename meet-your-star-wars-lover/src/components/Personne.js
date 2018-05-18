@@ -3,10 +3,10 @@ import React from 'react'
 
 import { Link } from "react-router-dom";
 
-import { Row, Col, Button } from 'reactstrap'
+import { Row, Col } from 'reactstrap'
 
 
-const Personne = ({id, image, name, homeworld, height, mass, chooseProfile, clickedId}) => (
+const Personne = ({id, image, name}) => (
   <div className="Row">
     <Row>
       <Col xs="12" md="4">
@@ -16,8 +16,7 @@ const Personne = ({id, image, name, homeworld, height, mass, chooseProfile, clic
         <h3> { name }</h3>
       </Col>
       <Col xs="12" md="4">
-        <Link to={`/about/${id}`} onClick={ () => chooseProfile(id) }>Date { name }</Link>
-        <Button onClick={ () => chooseProfile(id) }>Date</Button>
+        <Link className="btn btn-danger" to={`/about/${id}`} >Date</Link>
       </Col>
     </Row>
    

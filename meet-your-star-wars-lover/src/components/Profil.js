@@ -1,40 +1,29 @@
 import React, { Component } from 'react'
-// import Panier from './Panier'
-import { Button, Container, Card, CardImg, CardText, CardBody,
+import { Container, Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle } from 'reactstrap'
-// import stormtrooper from '../img/stormtrooper.gif'
-
-console.log('url de la page: ', window.location.href)
-const url = window.location.href
-const urlArr= url.split("profil/")
-const profilId = urlArr[1]
-console.log("notre id: ", profilId)
 class Profil extends Component {
 
   constructor(){
     super()
-
     this.state = {
-      url: `https://cdn.rawgit.com/akabab/starwars-api/0.2.1/api/id/1.json`,
-      loading: true,
-      data: [],
-      id: profilId
+      data: []
     }
   }
 
   componentDidMount(){
-    console.log("Mounting...Alors ???")
-    fetch(this.state.url)
+    const myUrl = `https://cdn.rawgit.com/akabab/starwars-api/0.2.1/api/id/${this.props.id}.json`
+    fetch(myUrl)
       .then(res => res.json())
-      .then(personne => {
-        console.log("on recoit: ", personne)
+      .then(character => {
+    
         this.setState(prevState => ({
           loading: false,
-          data: personne
-      }))
-    })  
-  }
-
+          data: character
+        }))
+      }
+     )  
+    }  
+  
   render() {
     return <Container>
       <Card className="w-25">
@@ -43,15 +32,12 @@ class Profil extends Component {
             <CardTitle>{this.state.data.name}</CardTitle>
             <CardSubtitle>Lover des étoiles</CardSubtitle>
             <CardText>
-              <p>
               Je viens de {this.state.data.homeworld} ;)
               <br />
-              Je mesure {this.state.data.height} pour {this.state.data.mass} kg.
+              Je mesure {this.state.data.height} pour {this.state.data.mass} kg kikoulol!
               <br />
-              {this.state.data.name === "Darth Vader" ? "et je suis SUPER méchant" : "et ça va je suis pas Darth Vader"}
-              </p>
+              {this.state.data.name === "Darth Vader" ? "et je suis SUPER méchant ahaha" : "et ça va je suis pas Darth Vader LOLLOLLOL !!"}
             </CardText>
-            <Button>Button</Button>
           </CardBody>
         </Card>
       </Container>
