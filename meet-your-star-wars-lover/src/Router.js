@@ -1,6 +1,8 @@
 import React from 'react';
 import './Router.css';
 import iloveyou from './img/iloveyou.gif';
+import moon from "./img/moon.png"
+import star from "./img/starrynight.jpg"
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Container } from 'reactstrap'
@@ -14,13 +16,16 @@ import Random from './components/Random';
 import Navbar from './components/Navbar';
 import LoveCalculator from './components/LoveCalculator';
 
+const style = {
+  zIndex: "2"
+}
 
 const Systemrouter = () => (
   <Router>
-    <div>
+      <div>
     <Navbar />
-      
-      <hr />
+      <div id="cadre">
+            <img id="lune" src={moon}/>
 
       <Route exact path="/" component={Home} />
       <Route path="/love-calculator" component={Calculator} />
@@ -29,13 +34,14 @@ const Systemrouter = () => (
       <Route path="/planete" component={ListePlanetes} />
       <Route path="/random" component={Randomlover} />
       <Route path="/about/:id" component={About} /> 
+        </div>
     </div>
   </Router>
 );
 
 const Home = () => ( 
   <div>
-    <Container>
+    <Container style={style}>
       <h2>Rencontre l'amour intergalactique</h2>
       <p>grâce à la Wild Code School</p>
       <img src={iloveyou} alt="han solo declares his love to leia"/>
