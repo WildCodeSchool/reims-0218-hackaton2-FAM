@@ -4,6 +4,7 @@ import { Container, Form, FormGroup, Input } from 'reactstrap'
 import './Panier.css';
 
 import Listepersonnes from './Listepersonnes'
+
 import stormtrooper from '../img/stormtrooper.gif'
 
 const findPersonne = (str, arr) => {

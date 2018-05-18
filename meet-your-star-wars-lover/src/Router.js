@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Router.css';
 import stormtrooper from './img/stormtrooper.gif'
 
@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Panier from './components/Panier';
 import Profil from './components/Profil';
+import Genres from './components/Genres';
+import Random from './components/Random';
 import Navbar from './components/Navbar';
 
 
@@ -33,6 +35,8 @@ const Systemrouter = () => (
       <Route exact path="/" component={Home} />
       <Route path="/love" component={Love} />
       <Route path="/topics" component={Topics} />
+      <Route path="/genre" component={ListeGenres} />
+      <Route path="/random" component={Randomlover} />
       <Route path="/about/:id" component={About} /> 
     </div>
   </Router>
@@ -51,6 +55,19 @@ const Love = () => (
     <img src={stormtrooper} alt="gentil stormtrooper"/>
   </div>
 );
+
+const ListeGenres = () => (
+  <div>
+    <Genres />
+  </div>
+);
+
+const Randomlover = () => (
+  <div>
+    <Random />
+  </div>
+);
+
 
 const About = ({match}) => (
   <div>

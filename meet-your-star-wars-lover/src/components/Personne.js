@@ -16,7 +16,7 @@ const Personne = ({id, image, name}) => (
         <h3> { name }</h3>
       </Col>
       <Col xs="12" md="4">
-        <Link className="btn btn-danger" to={`/about/${id}`} >Date</Link>
+        <Link className="btn btn-danger" to={`/about/${id}`} >&#10084; Date &#10084;</Link>
       </Col>
     </Row>
    
