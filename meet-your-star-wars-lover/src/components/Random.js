@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { Container } from 'reactstrap'
+import { Container, Button, Row, Col } from 'reactstrap'
 import './Panier.css';
 
 import Personne from './Personne'
@@ -14,7 +14,7 @@ class Genres extends Component {
     super()
 
     this.state = {
-      url: `https://cdn.rawgit.com/akabab/starwars-api/0.2.1/api/id${randomNum}.json`,
+      url: `https://cdn.rawgit.com/akabab/starwars-api/0.2.1/api/id/${randomNum}.json`,
       loading: true,
       data: []
     }
@@ -32,9 +32,20 @@ class Genres extends Component {
   render() {
     return <Container>
       {this.state.loading && <img src={stormtrooper} alt='gentil stormtrooper'></img>}
-      <Personne 
-        liste={this.state.liste}
-      />
+        <h1>Interested?</h1>
+        <Personne 
+          id={this.state.data.id}
+          name={this.state.data.name}
+          image={this.state.data.image}
+        />
+        <Row>
+          <Col xs="6">
+            <Button>Yes</Button>
+          </Col>
+          <Col xs="6">
+            <Button>No</Button>
+          </Col>
+        </Row>
       </Container>
   }
 }

@@ -6,11 +6,11 @@ import './Panier.css';
 import Listepersonnes from './Listepersonnes'
 import stormtrooper from '../img/stormtrooper.gif'
 
-const findPersonsBy = (str, arr) => {
-  return arr.filter(personne => personne.species === str )
+const findPersonsByHomeworld = (str, arr) => {
+  return arr.filter(personne => personne.homeworld === str )
 }
 
-class Especes extends Component {
+class Naboo extends Component {
 
   constructor(){
     super()
@@ -19,8 +19,8 @@ class Especes extends Component {
       url: 'https://cdn.rawgit.com/akabab/starwars-api/0.2.1/api/all.json',
       loading: true,
       liste: [],
-      listeHumans: [],
-      listeRobots: [],
+      listeTatooine: [],
+      listeNaboo: [],
       initialList: []
     }
   }
@@ -33,8 +33,8 @@ class Especes extends Component {
         loading: false,
         liste: charactersRes,
         initialList: charactersRes,
-        listeHumans: findPersonsBy('human', charactersRes),
-        listeRobots: findPersonsBy('droid', charactersRes)
+        listeTatooine: findPersonsByHomeworld('tatooine', charactersRes),
+        listeNaboo: findPersonsByHomeworld('naboo', charactersRes)
       })))
   }
   render() {
@@ -43,16 +43,16 @@ class Especes extends Component {
       <Row>
       
         <Col xs="6">
-        <h1>Humans</h1>
+        <h1>From Tatooine</h1>
           <Listepersonnes 
-          liste={this.state.listeHumans}
+          liste={this.state.listeTatooine}
           />
    
         </Col>
         <Col xs="6">
-        <h1>Droids</h1>
+        <h1>From Naboo</h1>
           <Listepersonnes 
-          liste={this.state.listeRobots}
+          liste={this.state.listeNaboo}
         />
 
         </Col>
@@ -63,4 +63,4 @@ class Especes extends Component {
   }
 }
 
-export default Especes
+export default Naboo
