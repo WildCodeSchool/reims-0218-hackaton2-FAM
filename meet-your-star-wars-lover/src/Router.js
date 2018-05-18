@@ -9,6 +9,7 @@ import Panier from './components/Panier';
 import Profil from './components/Profil';
 import Genres from './components/Genres';
 import Especes from './components/Especes';
+import Planetes from './components/Planetes';
 import Random from './components/Random';
 import Navbar from './components/Navbar';
 
@@ -65,7 +66,7 @@ const ListeEspeces = () => (
 
 const ListePlanetes = () => (
   <div>
-    <Genres />
+    <Planetes />
   </div>
 );
 
