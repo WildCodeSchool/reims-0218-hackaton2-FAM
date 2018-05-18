@@ -6,7 +6,8 @@ class Profil extends Component {
   constructor(){
     super()
     this.state = {
-      data: []
+      data: [],
+      homeworld: ""
     }
   }
 
@@ -15,10 +16,10 @@ class Profil extends Component {
     fetch(myUrl)
       .then(res => res.json())
       .then(character => {
-    
         this.setState(prevState => ({
           loading: false,
-          data: character
+          data: character,
+          homeworld: character.homeworld.slice(0,1).toUpperCase() + character.homeworld.slice(1)
         }))
       }
      )  
@@ -29,10 +30,10 @@ class Profil extends Component {
       <Card className="w-25">
           <CardImg className="img-fluid" src={this.state.data.image} alt="Card image cap" />
           <CardBody>
-            <CardTitle>{this.state.data.name}</CardTitle>
+            <CardTitle>Je m'appelle <strong>{this.state.data.name}</strong></CardTitle>
             <CardSubtitle>Lover des étoiles</CardSubtitle>
             <CardText>
-              Je viens de {this.state.data.homeworld} ;)
+              Je viens de {this.state.homeworld } ;)
               <br />
               Je mesure {this.state.data.height} pour {this.state.data.mass} kg kikoulol!
               <br />
