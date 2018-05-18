@@ -49,8 +49,8 @@ class NavbarSw extends Component {
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem><NavLink href="/genre">Genre</NavLink></DropdownItem>
-                  <DropdownItem>Planète</DropdownItem>
-                  <DropdownItem>Espèce</DropdownItem>
+                  <DropdownItem><NavLink href="/espece">Espèce</NavLink></DropdownItem>
+                  <DropdownItem><NavLink href="/planete">Planète</NavLink></DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
             </Nav>
