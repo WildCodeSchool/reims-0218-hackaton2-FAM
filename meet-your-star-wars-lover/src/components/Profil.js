@@ -1,8 +1,14 @@
 import React, { Component } from 'react'
+// import Panier from './Panier'
 import { Button, Container, Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle } from 'reactstrap'
-import stormtrooper from '../img/stormtrooper.gif'
+// import stormtrooper from '../img/stormtrooper.gif'
 
+console.log('url de la page: ', window.location.href)
+const url = window.location.href
+const urlArr= url.split("profil/")
+const profilId = urlArr[1]
+console.log("notre id: ", profilId)
 class Profil extends Component {
 
   constructor(){
@@ -11,12 +17,13 @@ class Profil extends Component {
     this.state = {
       url: `https://cdn.rawgit.com/akabab/starwars-api/0.2.1/api/id/1.json`,
       loading: true,
-      data: [] 
+      data: [],
+      id: profilId
     }
   }
 
   componentDidMount(){
-    console.log(this.state.url)
+    console.log("Mounting...Alors ???")
     fetch(this.state.url)
       .then(res => res.json())
       .then(personne => {

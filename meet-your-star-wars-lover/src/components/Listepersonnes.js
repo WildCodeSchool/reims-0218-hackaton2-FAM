@@ -1,7 +1,7 @@
 import React from 'react'
 import Personne from './Personne'
 
-const Listepersonnes = ({liste, chooseProfile}) => <div>
+const Listepersonnes = ({liste, chooseProfile, clickedId}) => <div>
   {liste.map((personne)=> <Personne
       key={personne.id}
       {...personne}
