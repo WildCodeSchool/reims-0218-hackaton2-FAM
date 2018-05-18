@@ -52,7 +52,6 @@ const Love = () => (
 
 const About = ({match}) => (
   <div>
-    <h2>Hello {match.params.id}</h2>
      <Profil id={match.params.id} /> 
   </div>
 );
