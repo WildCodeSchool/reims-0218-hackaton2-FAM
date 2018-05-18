@@ -34,6 +34,7 @@ const Systemrouter = () => (
 
       <Route exact path="/" component={Home} />
       <Route path="/love" component={Love} />
+      <Route path="/love-calculator" component={Calculator} />
       <Route path="/genre" component={ListeGenres} />
       <Route path="/espece" component={ListeEspeces} />
       <Route path="/planete" component={ListePlanetes} />
@@ -54,6 +55,15 @@ const Love = () => (
     <h2>Rencontre l'amour intergalactique</h2>
     <p>avec l'api starwars</p>
     <img src={stormtrooper} alt="gentil stormtrooper"/>
+  </div>
+);
+
+const Calculator = () => (
+  <div>
+    <h2>Laisse le calculateur de la Force choisir ton amour secret!</h2>
+    {/* Ci dessous, inscrire le composant du love calculator */}
+
+
   </div>
 );
 

@@ -40,7 +40,10 @@ class NavbarSw extends Component {
               </NavItem>
               <NavItem>
                 <NavLink href="/random">
-                  L'amour est aveugle
+                  Blind Love
+                </NavLink>
+                <NavLink href="/love-calculator">
+                  Qui est l'amour de ta vie?
                 </NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
