@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import {
   Collapse,
   Navbar,
@@ -13,7 +13,7 @@ import {
   DropdownItem
 } from "reactstrap";
 
-class Navbar extends React.Component {
+class NavbarSw extends Component {
   constructor(props) {
     super(props);
 
@@ -62,4 +62,4 @@ class Navbar extends React.Component {
   }
 }
 
-export default Navbar
+export default NavbarSw
