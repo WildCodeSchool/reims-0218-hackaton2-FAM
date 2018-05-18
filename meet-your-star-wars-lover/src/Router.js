@@ -6,11 +6,13 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Panier from './components/Panier';
 import Profil from './components/Profil';
+import Navbar from './components/Navbar';
 
 
 const Systemrouter = () => (
   <Router>
     <div>
+    <Navbar />
       <ul>
         <li>
           <Link to="/">Home</Link>
