@@ -49,11 +49,11 @@ class Panier extends Component {
     return <Container>
       {this.state.loading && <img src={stormtrooper} alt='gentil stormtrooper'></img>}
       <Form>
-        <FormGroup>
-          <Input type="text" placeholder="Poké recherche" onChange={this.handleInput.bind(this)} />
+        <FormGroup className="pt-5 pb-5">
+          <Input type="text" placeholder="Star Love Traker" onChange={this.handleInput.bind(this)} />
         </FormGroup>
       </Form>
-      <Listepersonnes 
+      <Listepersonnes
         liste={this.state.liste}
       />
       </Container>
