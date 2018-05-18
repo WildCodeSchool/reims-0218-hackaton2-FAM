@@ -16,7 +16,7 @@ const Personne = ({id, image, name, homeworld, height, mass, chooseProfile, clic
         <h3> { name }</h3>
       </Col>
       <Col xs="12" md="4">
-        <Link to={`/about/${id}`} onClick={ () => chooseProfile(id) }>Date { name }</Link>
+        <Link to={`/${id}`} onClick={ () => chooseProfile(id) }>Date { name }</Link>
         <Button onClick={ () => chooseProfile(id) }>Date</Button>
       </Col>
     </Row>

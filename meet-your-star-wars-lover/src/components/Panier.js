@@ -28,8 +28,9 @@ class Panier extends Component {
       this.setState(prevState => ({
         profileUrl: getProfile
       }))
-      fetch(getprofile)
+      fetch(getProfile)
         .then(res => res.json())
+        .then(profile => console.log(profile))
   }
 
   componentDidMount(){
@@ -49,7 +50,6 @@ class Panier extends Component {
         liste={this.state.liste}
         chooseProfile = {this.chooseProfile}  
       />
-      <Button>Coucou je suis un bouton mais je sais pas encore à quoi je sers</Button>
       </Container>
   }
 }

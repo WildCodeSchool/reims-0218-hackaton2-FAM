@@ -5,8 +5,7 @@ import stormtrooper from './img/stormtrooper.gif'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Panier from './components/Panier';
-import Profil2 from './components/Profil2';
-import Personne from './components/Personne';
+import Profil from './components/Profil';
 
 
 const Systemrouter = () => (
@@ -31,9 +30,8 @@ const Systemrouter = () => (
 
       <Route exact path="/" component={Home} />
       <Route path="/love" component={Love} />
-      <Route path="/about/{chooseProfile}" component={About} />
       <Route path="/topics" component={Topics} />
-      {/* <Route path="/profil" component={Profil} />  */}
+      <Route path="/:id" component={About} /> 
     </div>
   </Router>
 );
@@ -52,11 +50,10 @@ const Love = () => (
   </div>
 );
 
-const About = () => (
+const About = ({match}) => (
   <div>
-    <h2>About</h2>
-    <Personne />
-    
+    <h2>Hello {match.params.id}</h2>
+     <Profil id={match.params.id} /> 
   </div>
 );
 
