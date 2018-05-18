@@ -46,6 +46,7 @@ class Panier extends Component {
         initialList: charactersRes
       })))
   }
+
   render() {
     return <Container>
       {this.state.loading && <img src={stormtrooper} alt='gentil stormtrooper'></img>}

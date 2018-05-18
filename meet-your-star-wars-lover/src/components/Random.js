@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { Container, Button, Row, Col } from 'reactstrap'
+import { Container, Button, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 import './Panier.css';
 
 import Personne from './Personne'
@@ -16,8 +16,16 @@ class Genres extends Component {
     this.state = {
       url: `https://cdn.rawgit.com/akabab/starwars-api/0.2.1/api/id/${randomNum}.json`,
       loading: true,
+      modal: false,
       data: []
     }
+    this.toggle = this.toggle.bind(this);
+  }
+
+  toggle() {
+    this.setState({
+      modal: !this.state.modal
+    });
   }
 
   componentDidMount(){
@@ -38,14 +46,18 @@ class Genres extends Component {
           name={this.state.data.name}
           image={this.state.data.image}
         />
-        <Row className="justify-content-around pt-5 pb-5">
-          <Col xs="2">
-            <Button>Yes</Button>
-          </Col>
-          <Col xs="2">
-            <Button>No</Button>
-          </Col>
-        </Row>
+        <div className="text-center">
+        <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}Cette personne m'interesse !!!</Button>
+        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+          <ModalHeader className="text-center" toggle={this.toggle}>Une demande envoyée</ModalHeader>
+          <ModalBody className="text-center">
+            La force est en vous. Vous avez eu le courage de demander un match à cette personne. Continuez de vivre une vie d'aventures intrépides.
+          </ModalBody>
+          <ModalFooter>
+            <Button className="text-center" color="primary" onClick={this.toggle}>Que la force soit avec vous.</Button>{' '}
+          </ModalFooter>
+        </Modal>
+      </div>
       </Container>
   }
 }
