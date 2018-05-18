@@ -1,9 +1,17 @@
 import React, { Component } from 'react'
 
-import { Button, Container } from 'reactstrap'
-import stormtrooper from '../img/stormtrooper.gif'
+import { Container, Form, FormGroup, Input } from 'reactstrap'
+import './Panier.css';
 
 import Listepersonnes from './Listepersonnes'
+
+const findPersonne = (str, arr) => {
+  console.log(arr)
+  return arr.filter(personne => {
+    const regex = new RegExp(str, 'gi')
+    return personne.name.match(regex)
+  })
+}
 
 class Panier extends Component {
 
@@ -13,34 +21,38 @@ class Panier extends Component {
     this.state = {
       url: 'https://cdn.rawgit.com/akabab/starwars-api/0.2.1/api/all.json',
       loading: true,
-      liste: []
+      input: "",
+      liste: [],
+      initialList: []
     }
-    this.chooseProfile = this.chooseProfile.bind(this)
   }
 
-  chooseProfile (personId) {
-    console.log(`on clique sur ${personId}`)
+  handleInput(e) {
+    this.setState({
+      input : e.target.value,
+      liste : findPersonne(this.state.input, this.state.initialList)
+    })
   }
 
   componentDidMount(){
-    console.log(this.state.url)
     fetch(this.state.url)
       .then(res => res.json())
       .then(charactersRes => 
       this.setState(prevState => ({
         loading: false,
-        liste: charactersRes
-      })))  
+        liste: charactersRes,
+        initialList: charactersRes
+      })))
   }
   render() {
     return <Container>
-      {this.state.loading && <img src={stormtrooper} alt='gentil stormtrooper'></img>}
-      <Listepersonnes 
-        liste={this.state.liste}
-        chooseProfile = {this.chooseProfile}  
-      />
-      <Button>Coucou je suis un bouton mais je sais pas encore à quoi je sers</Button>
-      </Container>
+  <Form>
+    <FormGroup>
+      <Input type="text" placeholder="Poké recherche" onChange={this.handleInput.bind(this)} />
+    </FormGroup>
+  </Form>
+  <Listepersonnes liste={this.state.liste} />
+  </Container>
   }
 }
 
