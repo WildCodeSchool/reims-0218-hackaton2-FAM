@@ -9,6 +9,7 @@ import Profil from './components/Profil';
 import Genres from './components/Genres';
 import Random from './components/Random';
 import Navbar from './components/Navbar';
+import LoveCalculator from './components/LoveCalculator';
 
 
 const Systemrouter = () => (
@@ -61,9 +62,7 @@ const Love = () => (
 const Calculator = () => (
   <div>
     <h2>Laisse le calculateur de la Force choisir ton amour secret!</h2>
-    {/* Ci dessous, inscrire le composant du love calculator */}
-
-
+    <LoveCalculator/>
   </div>
 );
 
