@@ -45,10 +45,11 @@ const Home = () => (
 );
 
 const Calculator = () => (
-  <div>
+  <Container>
     <h2>Laisse le calculateur de la Force choisir ton amour secret!</h2>
-    <LoveCalculator/>
-  </div>
+    <h3><i>Work in progress, reviens demain</i></h3>
+    {/* Ci dessous, inscrire le composant du love calculator */}
+  </Container>
 );
 
 const ListeGenres = () => (
