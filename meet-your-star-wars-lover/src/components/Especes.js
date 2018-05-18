@@ -33,7 +33,7 @@ class Especes extends Component {
         loading: false,
         liste: charactersRes,
         initialList: charactersRes,
-        listeHumans: findPersonsBy('humans', charactersRes),
+        listeHumans: findPersonsBy('human', charactersRes),
         listeRobots: findPersonsBy('droid', charactersRes)
       })))
   }
@@ -43,16 +43,16 @@ class Especes extends Component {
       <Row>
       
         <Col xs="6">
-        <h1>Men</h1>
+        <h1>Humans</h1>
           <Listepersonnes 
-          liste={this.state.listeWomen}
+          liste={this.state.listeHumans}
           />
    
         </Col>
         <Col xs="6">
-        <h1>Men</h1>
+        <h1>Droids</h1>
           <Listepersonnes 
-          liste={this.state.listeMen}
+          liste={this.state.listeRobots}
         />
 
         </Col>

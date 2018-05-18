@@ -1,14 +1,14 @@
 import React from 'react';
 import './Router.css';
-import stormtrooper from './img/stormtrooper.gif'
-import iloveyou from './img/iloveyou.gif'
+import iloveyou from './img/iloveyou.gif';
 
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Container } from 'reactstrap'
 
 import Panier from './components/Panier';
 import Profil from './components/Profil';
 import Genres from './components/Genres';
+import Especes from './components/Especes';
 import Random from './components/Random';
 import Navbar from './components/Navbar';
 
@@ -59,7 +59,7 @@ const ListeGenres = () => (
 
 const ListeEspeces = () => (
   <div>
-    <Genres />
+    <Especes />
   </div>
 );
 
