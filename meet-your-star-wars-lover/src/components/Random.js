@@ -6,7 +6,7 @@ import './Panier.css';
 import Personne from './Personne'
 import stormtrooper from '../img/stormtrooper.gif'
 
-const randomNum = 67
+const randomNum = Math.round(Math.random() * 88)
 
 class Genres extends Component {
 
@@ -38,11 +38,11 @@ class Genres extends Component {
           name={this.state.data.name}
           image={this.state.data.image}
         />
-        <Row>
-          <Col xs="6">
+        <Row className="justify-content-around pt-5 pb-5">
+          <Col xs="2">
             <Button>Yes</Button>
           </Col>
-          <Col xs="6">
+          <Col xs="2">
             <Button>No</Button>
           </Col>
         </Row>
