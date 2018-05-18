@@ -30,7 +30,7 @@ class NavbarSw extends Component {
   render() {
     return (
       <div>
-        <Navbar color="light" light expand="md">
+        <Navbar className="navbar-dark" color="dark" light expand="md">
           <NavbarBrand href="/">Sous les étoiles</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -47,7 +47,7 @@ class NavbarSw extends Component {
                 <DropdownToggle nav caret>
                   Mots-clés
                 </DropdownToggle>
-                <DropdownMenu right>
+                <DropdownMenu right color="black">
                   <DropdownItem><NavLink href="/genre">Genre</NavLink></DropdownItem>
                   <DropdownItem><NavLink href="/espece">Espèce</NavLink></DropdownItem>
                   <DropdownItem><NavLink href="/planete">Planète</NavLink></DropdownItem>
