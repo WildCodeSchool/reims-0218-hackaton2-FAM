@@ -18,3 +18,31 @@ nav .dropdown-menu {
   border: 1px solid rgba(0,0,0,.15);
   border-radius: .25rem;
 }
+
+#lune {
+  left: 450px;
+  position: absolute;
+  animation: tourneLune 9s linear infinite;
+  transform: rotate(45deg) rotate(-45deg);
+  z-index: 1;
+}
+
+@keyframes tourneLune {
+  from { 	transform: rotate(0deg) translateX(450px); }
+  to   {  transform: rotate(360deg) translateX(450px); }
+}
+
+#cadre {
+  background-image: url("./img/fond.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  color: whitesmoke;
+}
