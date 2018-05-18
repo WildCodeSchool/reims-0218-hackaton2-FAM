@@ -34,7 +34,7 @@ const Systemrouter = () => (
 
 const Home = () => ( 
   <div>
-    <Container>
+    <Container className="text-center">
       <h2>Rencontre l'amour intergalactique</h2>
       <p>grâce à la Wild Code School</p>
       <img src={iloveyou} alt="han solo declares his love to leia"/>

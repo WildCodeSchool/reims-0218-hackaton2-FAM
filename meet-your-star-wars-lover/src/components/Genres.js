@@ -46,7 +46,7 @@ class Genres extends Component {
       <Row>
       
         <Col xs="6">
-        <h1>Men</h1>
+        <h1>Women</h1>
           <Listepersonnes 
           liste={this.state.listeWomen}
           />

@@ -27,7 +27,7 @@ class Profil extends Component {
   
   render() {
     return <Container>
-      <Card className="w-25">
+      <Card className="text-center mw-">
           <CardImg className="img-fluid" src={this.state.data.image} alt="Card image cap" />
           <CardBody>
             <CardTitle>Je m'appelle <strong>{this.state.data.name}</strong></CardTitle>
