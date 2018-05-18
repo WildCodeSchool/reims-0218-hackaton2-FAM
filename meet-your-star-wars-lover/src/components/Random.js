@@ -47,7 +47,7 @@ class Genres extends Component {
           image={this.state.data.image}
         />
         <div className="text-center">
-        <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}Cette personne m'interesse !!!</Button>
+        <Button className="mb-5" color="danger" onClick={this.toggle}>{this.props.buttonLabel}Cette personne m'interesse !!!</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader className="text-center" toggle={this.toggle}>Une demande envoyée</ModalHeader>
           <ModalBody className="text-center">
