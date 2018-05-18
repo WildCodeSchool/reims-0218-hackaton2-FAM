@@ -5,6 +5,7 @@ import stormtrooper from '../img/stormtrooper.gif'
 
 import Listepersonnes from './Listepersonnes'
 
+
 class Panier extends Component {
 
   constructor(){
@@ -13,17 +14,26 @@ class Panier extends Component {
     this.state = {
       url: 'https://cdn.rawgit.com/akabab/starwars-api/0.2.1/api/all.json',
       loading: true,
-      liste: []
+      liste: [],
+      clickedId: 0,
+      profileUrl: '',
+      profileData:[]
     }
     this.chooseProfile = this.chooseProfile.bind(this)
   }
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
   chooseProfile (personId) {
-    console.log(`on clique sur ${personId}`)
+    console.log(`on clique sur ${personId} et voici notre url: https://cdn.rawgit.com/akabab/starwars-api/0.2.1/api/id/${personId}.json`)
+    const getProfile = `https://cdn.rawgit.com/akabab/starwars-api/0.2.1/api/id/${personId}.json`
+      this.setState(prevState => ({
+        profileUrl: getProfile
+      }))
+      fetch(getprofile)
+        .then(res => res.json())
   }
 
   componentDidMount(){
-    console.log(this.state.url)
+    console.log(this.state.profileUrl)
     fetch(this.state.url)
       .then(res => res.json())
       .then(charactersRes => 
